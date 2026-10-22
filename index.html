@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight at the Graveyard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="animation.js" defer></script>
+</head>
+<body>
+    <h1>Midnight at the Graveyard</h1>
+
+    <div id="scene">
+        <div id="moon"></div>
+        <div class="star" style="top: 35px; left: 15%;"></div>
+        <div class="star" style="top: 65px; left: 35%;"></div>
+        <div class="star" style="top: 40px; left: 68%;"></div>
+        <div class="star" style="top: 105px; left: 88%;"></div>
+        <div id="hill"></div>
+        <div class="grave" id="grave1"></div>
+        <div class="grave" id="grave2"></div>
+        <div class="grave" id="grave3"></div>
+
+        <img id="vampire" src="images/vampire0.png" alt="Vampire moving west">
+        <img id="bat" src="images/bat0.png" alt="Bat moving south">
+    </div>
+
+    <p>
+        <button onclick="startAnimation()">Start</button>
+        <button onclick="stopAnimation()">Stop</button>
+        <button onclick="resetAnimation()">Reset</button>
+    </p>
+    <p id="status">Vampire goes West (left). Bat goes South (down).</p>
+    <!-- <p class="credit">Character sprites from <a href="https://www.reinerstilesets.de/">Reiner's Tilesets</a> by Reiner "Tiles" Prokein.</p> -->
+</body>
+</html>

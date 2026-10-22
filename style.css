@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #eeeeee;
+    margin: 20px;
+}
+
+#scene {
+    width: 90%;
+    max-width: 850px;
+    height: 430px;
+    margin: 15px auto;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #333;
+    background: linear-gradient(#384968, #8792ac 65%, #565e70);
+}
+
+#moon {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #f4edcf;
+    left: 75%;
+    top: 30px;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#hill {
+    position: absolute;
+    background-color: #303b37;
+    left: -10%;
+    bottom: -55px;
+    width: 120%;
+    height: 160px;
+    border-radius: 50% 50% 0 0;
+}
+
+.grave {
+    position: absolute;
+    bottom: 38px;
+    width: 46px;
+    height: 65px;
+    background: #8d9496;
+    border: 3px solid #62696a;
+    border-radius: 20px 20px 0 0;
+}
+
+#grave1 { left: 12%; }
+#grave2 { left: 45%; height: 55px; }
+#grave3 { left: 75%; height: 72px; }
+
+#vampire, #bat {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+button {
+    padding: 9px 18px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.credit { font-size: 13px; color: #555; }
