@@ -1,4 +1,4 @@
-// These pictures came from Reiner's Tilesets.
+
 // The vampire goes west, and the bat goes south.
 
 const scene = document.querySelector("#scene");
@@ -38,29 +38,34 @@ let timerId = null;
 function showCharacters() {
     vampireData.elem.style.left = vampireData.x + "px";
     vampireData.elem.style.top = vampireData.y + "px";
-    vampireData.elem.src = "images/" + vampireData.arrImgs[vampireData.poseNumber];
+    vampireData.elem.src = vampireData.arrImgs[vampireData.poseNumber];
 
     batData.elem.style.left = batData.x + "px";
     batData.elem.style.top = batData.y + "px";
-    batData.elem.src = "images/" + batData.arrImgs[batData.poseNumber];
+    batData.elem.src = batData.arrImgs[batData.poseNumber];
 }
 
 function frame() {
-    // West means going left, so x gets smaller.
+    // Vampire moves left (West).
     vampireData.x -= vampireData.speed;
+
     if (vampireData.x < -128) {
         vampireData.x = scene.clientWidth;
     }
 
-    // South means going down, so y gets bigger.
+    // Bat moves down (South).
     batData.y += batData.speed;
+
     if (batData.y > scene.clientHeight) {
         batData.y = -128;
     }
 
-    // Go to the next picture and wrap around to picture 0.
-    vampireData.poseNumber = (vampireData.poseNumber + 1) % vampireData.arrImgs.length;
-    batData.poseNumber = (batData.poseNumber + 1) % batData.arrImgs.length;
+    // Change animation frames using arrays.
+    vampireData.poseNumber =
+        (vampireData.poseNumber + 1) % vampireData.arrImgs.length;
+
+    batData.poseNumber =
+        (batData.poseNumber + 1) % batData.arrImgs.length;
 
     showCharacters();
 }
@@ -80,14 +85,19 @@ function stopAnimation() {
 
 function resetAnimation() {
     stopAnimation();
+
     vampireData.x = scene.clientWidth - 128;
     vampireData.y = 145;
     vampireData.poseNumber = 0;
+
     batData.x = Math.round(scene.clientWidth * 0.35);
     batData.y = -40;
     batData.poseNumber = 0;
+
     showCharacters();
-    statusText.textContent = "Vampire goes West (left). Bat goes South (down).";
+
+    statusText.textContent =
+        "Vampire goes West (left). Bat goes South (down).";
 }
 
 resetAnimation();
